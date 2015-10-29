@@ -279,6 +279,7 @@ dofile(modpath.."/nodes.lua")
 dofile(modpath.."/serialization.lua")
 dofile(modpath.."/mapgen.lua")
 dofile(modpath.."/chatcommands.lua")
+dofile(modpath.."/don.lua")
 --dofile(modpath.."/hud.lua")
 
 if minetest.setting_getbool("creative_mode") then
