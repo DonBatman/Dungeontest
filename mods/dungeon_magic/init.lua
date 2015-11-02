@@ -1,3 +1,5 @@
+dofile(minetest.get_modpath("dungeon_magic").."/enchanter.lua")
+
 local items = {
 	{"Orange Energy Orb","orb_orange"},
 	{"Green Energy Orb","orb_green"},

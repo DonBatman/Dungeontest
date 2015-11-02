@@ -1,5 +1,6 @@
 dofile(minetest.get_modpath("dungeontest_swords").."/craftitems.lua")
-
+dofile(minetest.get_modpath("dungeontest_swords").."/forge.lua")
+dofile(minetest.get_modpath("dungeontest_swords").."/enchanted.lua")
 
 minetest.register_tool(":default:sword_wood",{
 	description = "Wood Sword",
@@ -79,75 +80,7 @@ minetest.register_tool(":default:sword_diamond",{
 		damage_groups = {fleshy=8},
 		}
 })
---Enchanted Swords
-minetest.register_tool("dungeontest_swords:sword_diamond_enchanted",{
-	description = "Diamond Sword Enchanted",
-	inventory_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_diamond2.png",
-	wield_scale = {x=1.5,y=1.5,z=0.5},
-	tool_capabilities = {
-		full_punch_interval = 0.7,
-		max_drop_level=1,
-		groupcaps={
-			snappy={times={[1]=1.9, [2]=0.9, [3]=0.30}, uses=40, maxlevel=1},
-		},
-		damage_groups = {fleshy=9},
-		}
-})
-minetest.register_tool("dungeontest_swords:sword_diamond_enchanted_orange",{
-	description = "Diamond Sword Enchanted Orange",
-	inventory_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_orange.png",
-	wield_scale = {x=1.5,y=1.5,z=0.5},
-	tool_capabilities = {
-		full_punch_interval = 0.7,
-		max_drop_level=1,
-		groupcaps={
-			snappy={times={[1]=1.9, [2]=0.9, [3]=0.30}, uses=40, maxlevel=1},
-		},
-		damage_groups = {fleshy=10},
-		}
-})
- 
-minetest.register_tool("dungeontest_swords:sword_diamond_enchanted_green",{
-	description = "Diamond Sword Enchanted Green",
-	inventory_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_green.png",
-	wield_scale = {x=1.5,y=1.5,z=0.5},
-	tool_capabilities = {
-		full_punch_interval = 0.7,
-		max_drop_level=1,
-		groupcaps={
-			snappy={times={[1]=1.9, [2]=0.9, [3]=0.30}, uses=40, maxlevel=1},
-		},
-		damage_groups = {fleshy=12},
-		}
-})
- 
-minetest.register_tool("dungeontest_swords:sword_diamond_enchanted_blue",{
-	description = "Diamond Sword Enchanted Blue",
-	inventory_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_blue.png",
-	wield_scale = {x=1.5,y=1.5,z=0.5},
-	tool_capabilities = {
-		full_punch_interval = 0.7,
-		max_drop_level=1,
-		groupcaps={
-			snappy={times={[1]=1.9, [2]=0.9, [3]=0.30}, uses=40, maxlevel=1},
-		},
-		damage_groups = {fleshy=14},
-		}
-})
- 
-minetest.register_tool("dungeontest_swords:sword_diamond_enchanted_red",{
-	description = "Diamond Sword Enchanted Red",
-	inventory_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_red.png",
-	wield_scale = {x=1.5,y=1.5,z=0.5},
-	tool_capabilities = {
-		full_punch_interval = 0.7,
-		max_drop_level=1,
-		groupcaps={
-			snappy={times={[1]=1.9, [2]=0.9, [3]=0.30}, uses=40, maxlevel=1},
-		},
-		damage_groups = {fleshy=16},
-		}
-})
+
  
  
  
