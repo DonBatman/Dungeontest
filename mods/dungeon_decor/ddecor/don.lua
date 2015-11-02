@@ -88,6 +88,24 @@ minetest.register_node("ddecor:iron_cross",{
 		type = "fixed",
 		fixed = {{-0.5, -0.5, 0.4375, 0.5, 0.5, 0.5},}}
 })
+--Iron Cross
+minetest.register_node("ddecor:inverted_cross",{
+	description = "Inverted Cross",
+	tiles = {
+			"ddecor_brown.png",
+			},
+	drawtype = "nodebox",
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {creative_breakable=1},
+		node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.0625, -0.5, 0.375, 0.0625, 0.5, 0.5},
+			{-0.375, -0.1875, 0.375, 0.375, -0.0625, 0.5},
+		}
+	},
+})
 --Stock
 minetest.register_node("ddecor:stock",{
 	description = "Stock",
@@ -130,7 +148,7 @@ minetest.register_node("ddecor:stock",{
 })
 --Pedestal
 minetest.register_node("ddecor:pedestal",{
-	description = "Stock",
+	description = "Pedestal",
 	tiles = {
 			"ddecor_pedestal_top.png",
 			"ddecor_pedestal_top.png",

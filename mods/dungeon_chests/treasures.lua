@@ -5,6 +5,7 @@ treasurer.register_treasure("default:gold_ingot",0.01,7,{1,10},nil,"crafting_com
 treasurer.register_treasure("default:bronze_ingot",0.02,5,{1,16},nil,"crafting_component")
 treasurer.register_treasure("default:copper_ingot",0.06,3,{1,17},nil,"crafting_component")
 treasurer.register_treasure("default:steel_ingot",0.09,4,{1,20},nil,"crafting_component")
+treasurer.register_treasure("default:stick",0.09,4,{1,20},nil,"crafting_component")
 
 
 treasurer.register_treasure("default:coal_lump",0.2,2,{3,10},nil,{ "fuel" })
@@ -55,6 +56,15 @@ treasurer.register_treasure("tnt:gunpowder",0.123,3,{1,10},nil,"crafting_compone
 
 treasurer.register_treasure("mobs:rat",1,0.6,{1,2},nil,"raw_food")
 treasurer.register_treasure("mobs:rat_cooked",0.1,1,{1,2},nil,"food")
+
+--Swords
+treasurer.register_treasure("dungeon_swords:blade_wood",0.09,4,{1,20},nil,"crafting_component")
+treasurer.register_treasure("dungeon_swords:blade_stone",0.09,4,{1,20},nil,"crafting_component")
+treasurer.register_treasure("dungeon_swords:blade_steel",0.09,4,{1,20},nil,"crafting_component")
+treasurer.register_treasure("dungeon_swords:blade_mese",0.09,4,{1,20},nil,"crafting_component")
+treasurer.register_treasure("dungeon_swords:handle_wood",0.09,4,{1,20},nil,"crafting_component")
+--end Swords
+
 
 if  minetest.get_modpath("throwing") then
     treasurer.register_treasure("throwing:spear_stone", 0.03, 5, nil, nil, {"melee_weapon", "ranged_weapon"})

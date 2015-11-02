@@ -1,8 +1,9 @@
+dofile(minetest.get_modpath("dungeontest_swords").."/craftitems.lua")
+
 
 minetest.register_tool(":default:sword_wood",{
 	description = "Wood Sword",
-	inventory_image = "dungeontest_sword_handle_wood.png^dungeontest_sword_blade_wood.png",
-	wield_image = "dungeontest_sword_handle_wood.png^dungeontest_sword_blade_wood.png",
+	inventory_image = "dungeontest_sword_blade_wood.png^dungeontest_sword_handle_wood.png",
 	wield_scale = {x=1.5,y=1.5,z=0.5},
 	tool_capabilities = {
 		full_punch_interval = 1,
@@ -15,8 +16,7 @@ minetest.register_tool(":default:sword_wood",{
 })
 minetest.register_tool(":default:sword_stone",{
 	description = "Stone Sword",
-	inventory_image = "dungeontest_sword_handle_wood.png^dungeontest_sword_blade_stone.png",
-	wield_image = "dungeontest_sword_handle_wood.png^dungeontest_sword_blade_stone.png",
+	inventory_image = "dungeontest_sword_blade_stone.png^dungeontest_sword_handle_wood.png",
 	wield_scale = {x=1.5,y=1.5,z=0.5},
 	tool_capabilities = {
 		full_punch_interval = 1,
@@ -29,8 +29,7 @@ minetest.register_tool(":default:sword_stone",{
 })
 minetest.register_tool(":default:sword_steel",{
 	description = "Steel Sword",
-	inventory_image = "dungeontest_sword_handle_wood.png^dungeontest_sword_blade_steel.png",
-	wield_image = "dungeontest_sword_handle_wood.png^dungeontest_sword_blade_steel.png",
+	inventory_image = "dungeontest_sword_blade_steel.png^dungeontest_sword_handle_wood.png",
 	wield_scale = {x=1.5,y=1.5,z=0.5},
 	tool_capabilities = {
 		full_punch_interval = 0.8,
@@ -43,8 +42,7 @@ minetest.register_tool(":default:sword_steel",{
 })
 minetest.register_tool(":default:sword_bronze",{
 	description = "Bronze Sword",
-	inventory_image = "dungeontest_sword_handle_wood.png^dungeontest_sword_blade_bronze.png",
-	wield_image = "dungeontest_sword_handle_wood.png^dungeontest_sword_blade_bronze.png",
+	inventory_image = "dungeontest_sword_blade_bronze.png^dungeontest_sword_handle_wood.png",
 	wield_scale = {x=1.5,y=1.5,z=0.5},
 	tool_capabilities = {
 		full_punch_interval = 0.8,
@@ -57,8 +55,7 @@ minetest.register_tool(":default:sword_bronze",{
 })
 minetest.register_tool(":default:sword_mese",{
 	description = "Mese Sword",
-	inventory_image = "dungeontest_sword_handle_wood.png^dungeontest_sword_blade_mese.png",
-	wield_image = "dungeontest_sword_handle_wood.png^dungeontest_sword_blade_mese.png",
+	inventory_image = "dungeontest_sword_blade_mese.png^dungeontest_sword_handle_wood.png",
 	wield_scale = {x=1.5,y=1.5,z=0.5},
 	tool_capabilities = {
 		full_punch_interval = 0.7,
@@ -71,8 +68,7 @@ minetest.register_tool(":default:sword_mese",{
 })
 minetest.register_tool(":default:sword_diamond",{
 	description = "Diamond Sword",
-	inventory_image = "dungeontest_sword_handle_wood.png^dungeontest_sword_blade_diamond.png",
-	wield_image = "dungeontest_sword_handle_wood.png^dungeontest_sword_blade_diamond.png",
+	inventory_image = "dungeontest_sword_blade_diamond.png^dungeontest_sword_handle_wood.png",
 	wield_scale = {x=1.5,y=1.5,z=0.5},
 	tool_capabilities = {
 		full_punch_interval = 0.7,
@@ -86,8 +82,7 @@ minetest.register_tool(":default:sword_diamond",{
 --Enchanted Swords
 minetest.register_tool("dungeontest_swords:sword_diamond_enchanted",{
 	description = "Diamond Sword Enchanted",
-	inventory_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_diamond.png",
-	wield_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_diamond.png",
+	inventory_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_diamond2.png",
 	wield_scale = {x=1.5,y=1.5,z=0.5},
 	tool_capabilities = {
 		full_punch_interval = 0.7,
@@ -101,7 +96,6 @@ minetest.register_tool("dungeontest_swords:sword_diamond_enchanted",{
 minetest.register_tool("dungeontest_swords:sword_diamond_enchanted_orange",{
 	description = "Diamond Sword Enchanted Orange",
 	inventory_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_orange.png",
-	wield_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_orange.png",
 	wield_scale = {x=1.5,y=1.5,z=0.5},
 	tool_capabilities = {
 		full_punch_interval = 0.7,
@@ -116,7 +110,6 @@ minetest.register_tool("dungeontest_swords:sword_diamond_enchanted_orange",{
 minetest.register_tool("dungeontest_swords:sword_diamond_enchanted_green",{
 	description = "Diamond Sword Enchanted Green",
 	inventory_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_green.png",
-	wield_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_green.png",
 	wield_scale = {x=1.5,y=1.5,z=0.5},
 	tool_capabilities = {
 		full_punch_interval = 0.7,
@@ -131,7 +124,6 @@ minetest.register_tool("dungeontest_swords:sword_diamond_enchanted_green",{
 minetest.register_tool("dungeontest_swords:sword_diamond_enchanted_blue",{
 	description = "Diamond Sword Enchanted Blue",
 	inventory_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_blue.png",
-	wield_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_blue.png",
 	wield_scale = {x=1.5,y=1.5,z=0.5},
 	tool_capabilities = {
 		full_punch_interval = 0.7,
@@ -146,7 +138,6 @@ minetest.register_tool("dungeontest_swords:sword_diamond_enchanted_blue",{
 minetest.register_tool("dungeontest_swords:sword_diamond_enchanted_red",{
 	description = "Diamond Sword Enchanted Red",
 	inventory_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_red.png",
-	wield_image = "dungeontest_sword_handle_wood_enchanted.png^dungeontest_sword_blade_red.png",
 	wield_scale = {x=1.5,y=1.5,z=0.5},
 	tool_capabilities = {
 		full_punch_interval = 0.7,

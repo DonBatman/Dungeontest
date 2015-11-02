@@ -1,6 +1,6 @@
 --Dungeon Room Wall Stairs and Slab
 stairs.register_stair_and_slab("wall", "dungeon_rooms:wall",
-		{snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		{creative_breakable=1},
 		{"dungeon_rooms_wall.png"},
 		"Dungeon Stair",
 		"Dungeon Slab",
@@ -18,7 +18,7 @@ minetest.register_node("dungeon_rooms:floor", {
 })
 --Dungeon Room Wall Stairs and Slab
 stairs.register_stair_and_slab("tile", "dungeon_rooms:tile",
-		{snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		{creative_breakable=1},
 		{"dungeon_rooms_tile.png"},
 		"Dungeon Tile Stair",
 		"Dungeon Tile Slab",
@@ -74,6 +74,18 @@ minetest.register_node("dungeon_rooms:cracked_tile_green", {
 			"dungeon_rooms_tile.png",
 			"dungeon_rooms_tile.png",
 			"dungeon_rooms_tile.png",
+			},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	groups = {creative_breakable=1},
+	is_ground_content = false,
+})
+--Cracked Tile
+minetest.register_node("dungeon_rooms:red_tile", {
+	description = "Dungeon Red Tile",
+	drawtype = "normal",
+	tiles = {
+			"dungeon_rooms_tile.png^dungeon_rooms_red_overlay.png"
 			},
 	paramtype = "light",
 	paramtype2 = "facedir",
