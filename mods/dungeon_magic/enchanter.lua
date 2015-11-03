@@ -18,7 +18,7 @@ minetest.register_node("dungeon_magic:enchantment_table",{
 	paramtype = "light",
 	paramtype2 = "facedir",
 	light_source = 7,
-	groups = {cracky=2,choppy=2},
+	groups = {creative_breakable=1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -38,33 +38,7 @@ minetest.register_node("dungeon_magic:enchantment_table",{
 
 after_place_node = function(pos, placer)
 	local meta = minetest.env:get_meta(pos);
-			meta:set_string("owner",  (placer:get_player_name() or ""));
-			meta:set_string("infotext",  "Enchantment Table (owned by " .. (placer:get_player_name() or "") .. ")");
-end,
-
-can_dig = function(pos,player)
-	local meta = minetest.env:get_meta(pos);
-	local inv = meta:get_inventory()
-	if not inv:is_empty("tool") then
-		return false
-	elseif not inv:is_empty("orb1") then
-		return false
-	elseif not inv:is_empty("orb2") then
-		return false
-	elseif not inv:is_empty("orb3") then
-		return false
-	elseif not inv:is_empty("orb4") then
-		return false
-	elseif not inv:is_empty("orb5") then
-		return false
-	elseif not inv:is_empty("orb6") then
-		return false
-	elseif not inv:is_empty("orb7") then
-		return false
-	elseif not inv:is_empty("orb8") then
-		return false
-	end
-	return true
+			meta:set_string("infotext",  "Enchantment Table");
 end,
 
 on_construct = function(pos)

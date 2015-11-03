@@ -9,62 +9,35 @@ local make_sword = false
 
 
 minetest.register_node("dungeontest_swords:forge",{
-	description = "Enchantment Table",
+	description = "Sword Forge",
 	tiles = {
 			{name="dungeon_forge_top.png", animation={type="vertical_frames",aspect_w=16, aspect_h=16, length=0.3}},
+			"dungeon_forge_back.png",
+			"dungeon_forge_side.png^[transformFX",
 			"dungeon_forge_side.png",
-			"dungeon_forge_side.png",
-			"dungeon_forge_side.png",
-			"dungeon_forge_side.png",
-			"dungeon_forge_side.png",
+			"dungeon_forge_back.png",
+			{name="dungeon_forge_front_sword.png", animation={type="vertical_frames",aspect_w=16, aspect_h=16, length=0.3}},
 		},
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	light_source = 14,
-	groups = {cracky=2,choppy=2},
+	groups = {creative_breakable=1},
 	node_box = {
 		type = "fixed",
 		fixed = {
 			{-0.5, -0.5, -0.375, -0.375, 0.5, 0.375},
 			{-0.5, -0.5, 0.375, 0.5, 0.5, 0.5},
 			{0.375, -0.5, -0.375, 0.5, 0.5, 0.375},
-			{-0.5, -0.5, -0.5, 0.5, 0.5, -0.375},
-			{-0.375, -0.5, -0.375, 0.375, 0.375, 0.375},
+			{-0.5, -0.5, -0.5, 0.5, 0.25, -0.375},
+			{-0.375, -0.5, -0.375, 0.375, 0.3125, 0.375},
+			{-0.375, -0.5, -0.3125, 0.375, 0.375, 0.375},
 		}
 	},
 
 after_place_node = function(pos, placer)
 	local meta = minetest.env:get_meta(pos);
-			meta:set_string("owner",  (placer:get_player_name() or ""));
-			meta:set_string("infotext",  "Sword Forge (owned by " .. (placer:get_player_name() or "") .. ")");
-end,
-
-can_dig = function(pos,player)
-	local meta = minetest.env:get_meta(pos);
-	local inv = meta:get_inventory()
-	if not inv:is_empty("blade") then
-		return false
-	elseif not inv:is_empty("blade1") then
-		return false
-	elseif not inv:is_empty("blade2") then
-		return false
-	elseif not inv:is_empty("blade3") then
-		return false
-	elseif not inv:is_empty("handle") then
-		return false
-	elseif not inv:is_empty("handle1") then
-		return false
-	elseif not inv:is_empty("handle2") then
-		return false
-	elseif not inv:is_empty("handle3") then
-		return false
-	elseif not inv:is_empty("handle4") then
-		return false
-	elseif not inv:is_empty("sword") then
-		return false
-	end
-	return true
+			meta:set_string("infotext",  "Sword Forge");
 end,
 
 on_construct = function(pos)

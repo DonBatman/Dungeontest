@@ -33,6 +33,7 @@ mobs:register_mob("slimes:greensmall", {
 	view_range = 10,
 	drops = {
 		{name = "mesecons_materials:glue", chance = 4, min = 1, max = 2},
+		{name = "dungeon_magic:orb_orange", chance = 40, min = 1, max = 1},
 	},
 	drawtype = "front",
 	water_damage = 0,

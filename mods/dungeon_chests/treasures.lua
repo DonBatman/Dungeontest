@@ -58,11 +58,11 @@ treasurer.register_treasure("mobs:rat",1,0.6,{1,2},nil,"raw_food")
 treasurer.register_treasure("mobs:rat_cooked",0.1,1,{1,2},nil,"food")
 
 --Swords
-treasurer.register_treasure("dungeon_swords:blade_wood",0.09,4,{1,20},nil,"crafting_component")
-treasurer.register_treasure("dungeon_swords:blade_stone",0.09,4,{1,20},nil,"crafting_component")
-treasurer.register_treasure("dungeon_swords:blade_steel",0.09,4,{1,20},nil,"crafting_component")
-treasurer.register_treasure("dungeon_swords:blade_mese",0.09,4,{1,20},nil,"crafting_component")
-treasurer.register_treasure("dungeon_swords:handle_wood",0.09,4,{1,20},nil,"crafting_component")
+treasurer.register_treasure("dungeontest_swords:blade_wood",0.09,4,{1,20},nil,"crafting_component")
+treasurer.register_treasure("dungeontest_swords:blade_stone",0.09,4,{1,20},nil,"crafting_component")
+treasurer.register_treasure("dungeontest_swords:blade_steel",0.09,4,{1,20},nil,"crafting_component")
+treasurer.register_treasure("dungeontest_swords:blade_mese",0.09,4,{1,20},nil,"crafting_component")
+treasurer.register_treasure("dungeontest_swords:handle_wood",0.09,4,{1,20},nil,"crafting_component")
 --end Swords
 
 
