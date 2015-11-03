@@ -2,6 +2,7 @@ dofile(minetest.get_modpath("dungeontest_swords").."/craftitems.lua")
 dofile(minetest.get_modpath("dungeontest_swords").."/forge.lua")
 dofile(minetest.get_modpath("dungeontest_swords").."/enchanted.lua")
 dofile(minetest.get_modpath("dungeontest_swords").."/armor_forge.lua")
+dofile(minetest.get_modpath("dungeontest_swords").."/axe_forge.lua")
 
 minetest.register_tool(":default:sword_wood",{
 	description = "Wood Sword",

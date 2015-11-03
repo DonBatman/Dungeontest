@@ -2,21 +2,21 @@ local blade = {}
 local make_blade = false
 local handle = {}
 local make_handle = false
-local sword = {}
-local make_sword = false
+local axe = {}
+local make_axe = false
 
 
 
 
-minetest.register_node("dungeontest_swords:forge",{
-	description = "Sword Forge",
+minetest.register_node("dungeontest_swords:axe_forge",{
+	description = "Axe Forge",
 	tiles = {
 			{name="dungeon_forge_top.png", animation={type="vertical_frames",aspect_w=16, aspect_h=16, length=0.3}},
 			"dungeon_forge_back.png",
 			"dungeon_forge_side.png^[transformFX",
 			"dungeon_forge_side.png",
 			"dungeon_forge_back.png",
-			{name="dungeon_forge_front_sword.png", animation={type="vertical_frames",aspect_w=16, aspect_h=16, length=0.3}},
+			{name="dungeon_forge_front_axe.png", animation={type="vertical_frames",aspect_w=16, aspect_h=16, length=0.3}},
 		},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -37,7 +37,7 @@ minetest.register_node("dungeontest_swords:forge",{
 
 after_place_node = function(pos, placer)
 	local meta = minetest.env:get_meta(pos);
-			meta:set_string("infotext",  "Sword Forge");
+			meta:set_string("infotext",  "Axe Forge");
 end,
 
 on_construct = function(pos)
@@ -46,9 +46,9 @@ on_construct = function(pos)
 		"background[-0.15,-0.25;9.40,10.75;dungeon_forge_bg.png]"..
 		--Blade
 		"label[1,1.5;Blade]"..
-		"list[current_name;blade1;2,0.5;1,1;]"..
-		"list[current_name;blade2;2,1.5;1,1;]"..
-		"list[current_name;blade3;2,2.5;1,1;]"..
+		"list[current_name;blade1;3,1.5;1,1;]"..
+		"list[current_name;blade2;2,1;1,1;]"..
+		"list[current_name;blade3;2,2;1,1;]"..
 		"button[2,3.5;1,1;bbutton;Make]"..
 		"list[current_name;blade;2,4.5;1,1;]"..
 		--Handle
@@ -58,12 +58,12 @@ on_construct = function(pos)
 		"list[current_name;handle3;6,2.5;1,1;]"..
 		"button[6,3.5;1,1;hbutton;Make]"..
 		"list[current_name;handle;3,4.5;1,1;]"..
-		--Sword
-		"button[4,4.5;2,1;sbutton;Make]"..
-		"list[current_name;sword;6,4.5;1,1;]"..
+		--Axe
+		"button[4,4.5;2,1;abutton;Make]"..
+		"list[current_name;axe;6,4.5;1,1;]"..
 		--Show Inventory
 		"list[current_player;main;0.5,6;8,4;]")
-	meta:set_string("infotext", "Sword Forge")
+	meta:set_string("infotext", "Axe Forge")
 	local inv = meta:get_inventory()
 	inv:set_size("blade", 1)
 	inv:set_size("blade1", 1)
@@ -73,7 +73,7 @@ on_construct = function(pos)
 	inv:set_size("handle1", 1)
 	inv:set_size("handle2", 1)
 	inv:set_size("handle3", 1)
-	inv:set_size("sword", 1)
+	inv:set_size("axe", 1)
 end,
 
 on_receive_fields = function(pos, formname, fields, sender)
@@ -95,12 +95,12 @@ if fields["bbutton"]then
 
 
 	local blade_list = {
-			{"default:wood",	"dungeontest_swords:blade_wood"},
-			{"default:stone",	"dungeontest_swords:blade_stone"},
-			{"default:steel_ingot",	"dungeontest_swords:blade_steel"},
-			{"default:bronze_ingot",	"dungeontest_swords:blade_bronze"},
-			{"default:mese_crystal",	"dungeontest_swords:blade_mese"},
-			{"default:diamond",	"dungeontest_swords:blade_diamond"},
+			{"default:wood",			"dungeon_tools:axe_blade_wood"},
+			{"default:stone",			"dungeon_tools:axe_blade_stone"},
+			{"default:steel_ingot",		"dungeon_tools:axe_blade_steel"},
+			{"default:bronze_ingot",	"dungeon_tools:axe_blade_bronze"},
+			{"default:mese_crystal",	"dungeon_tools:axe_blade_mese"},
+			{"default:diamond",			"dungeon_tools:axe_blade_diamond"},
 			}
 	for i in ipairs (blade_list) do
 		local mat = blade_list[i][1]
@@ -139,22 +139,12 @@ elseif fields["hbutton"]then
 	local h2 = inv:get_stack("handle2", 1)
 	local h3 = inv:get_stack("handle3", 1)
 
-
-	local handle_list = {
-			{"default:stick",	"dungeontest_swords:handle_wood"},
-			{"default:steel_ingot",	"dungeontest_swords:handle_steel"},
-			}
-	for i in ipairs (handle_list) do
-		local mat = handle_list[i][1]
-		local bld = handle_list[i][2]
-
-		if   h1:get_name() == mat and
-		     h2:get_name() == mat and
-		     h3:get_name() == mat then
-				handle = bld
+		if   h1:get_name() == "default:stick" and
+		     h2:get_name() == "default:stick" and
+		     h3:get_name() == "default:stick" then
+				handle = "dungeon_tools:axe_handle"
 				make_handle = true
 		end
-	end
 		if make_handle == true then
 			inv:add_item("handle",handle)
 			
@@ -168,7 +158,7 @@ elseif fields["hbutton"]then
 			inv:set_stack("handle3",1,h3)
 		end
 
-elseif fields["sbutton"]then
+elseif fields["abutton"]then
 		make_sword = false
 
 		if inv:is_empty("blade") or
@@ -184,14 +174,14 @@ elseif fields["sbutton"]then
 	for i=1,#maters do
 	local mater = maters[i]
 	
-		if   s1:get_name() == "dungeontest_swords:blade_"..mater and
-		     s2:get_name() == "dungeontest_swords:handle_wood" then
-				sword = "default:sword_"..mater
-				make_sword = true
+		if   s1:get_name() == "dungeon_tools:axe_blade_"..mater and
+		     s2:get_name() == "dungeon_tools:axe_handle" then
+				axe = "default:axe_"..mater
+				make_axe = true
 		end
 	end
-		if make_sword == true then
-			inv:add_item("sword",sword)
+		if make_axe == true then
+			inv:add_item("axe",axe)
 			
 			s1:take_item()
 			inv:set_stack("blade",1,s1)
