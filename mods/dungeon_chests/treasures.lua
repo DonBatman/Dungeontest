@@ -57,13 +57,15 @@ treasurer.register_treasure("tnt:gunpowder",0.123,3,{1,10},nil,"crafting_compone
 treasurer.register_treasure("mobs:rat",1,0.6,{1,2},nil,"raw_food")
 treasurer.register_treasure("mobs:rat_cooked",0.1,1,{1,2},nil,"food")
 
---Swords
-treasurer.register_treasure("dungeontest_swords:blade_wood",0.09,4,{1,20},nil,"crafting_component")
-treasurer.register_treasure("dungeontest_swords:blade_stone",0.09,4,{1,20},nil,"crafting_component")
-treasurer.register_treasure("dungeontest_swords:blade_steel",0.09,4,{1,20},nil,"crafting_component")
-treasurer.register_treasure("dungeontest_swords:blade_mese",0.09,4,{1,20},nil,"crafting_component")
-treasurer.register_treasure("dungeontest_swords:handle_wood",0.09,4,{1,20},nil,"crafting_component")
---end Swords
+--Magic Orbs
+treasurer.register_treasure("dungeon_maic:orb_orange",0.2,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_maic:orb_green",0.8,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_maic:orb_blue",0.02,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_maic:orb_red",0.08,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_maic:crystal_orange",0.1,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_maic:crystal_green",0.8,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_maic:crystal_blue",0.02,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_maic:crystal_red",0.08,1,{1,2},nil,"crafting_component")
 
 
 if  minetest.get_modpath("throwing") then

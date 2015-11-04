@@ -23,6 +23,9 @@ mobs:register_mob("ghost:ghost", {
 		damage = "creatures_ghost_hit",
 		death = "creatures_ghost_death"
 	},
+	drops = {
+		{name = "dungeon_magic:orb_green", chance = 80, min = 1, max = 1},
+	},
 	walk_velocity = 2,
 	run_velocity = 2,
 	fall_speed = 0,
