@@ -18,7 +18,7 @@ minetest.register_item(":", {
 })
 
 --
--- Picks
+--[[ Picks
 --
 
 minetest.register_tool("default:pick_wood", {
@@ -94,8 +94,8 @@ minetest.register_tool("default:pick_diamond", {
 	},
 })
 
---
--- Shovels
+--]]
+--[[ Shovels
 --
 
 minetest.register_tool("default:shovel_wood", {
@@ -177,7 +177,7 @@ minetest.register_tool("default:shovel_diamond", {
 	},
 })
 
---
+--]]
 -- Axes
 --
 

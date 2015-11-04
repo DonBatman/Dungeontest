@@ -8,7 +8,7 @@ local make_sword = false
 
 
 
-minetest.register_node("dungeontest_swords:forge",{
+minetest.register_node("dungeon_forge:forge",{
 	description = "Sword Forge",
 	tiles = {
 			{name="dungeon_forge_top.png", animation={type="vertical_frames",aspect_w=16, aspect_h=16, length=0.3}},
@@ -95,12 +95,12 @@ if fields["bbutton"]then
 
 
 	local blade_list = {
-			{"default:wood",	"dungeontest_swords:blade_wood"},
-			{"default:stone",	"dungeontest_swords:blade_stone"},
-			{"default:steel_ingot",	"dungeontest_swords:blade_steel"},
-			{"default:bronze_ingot",	"dungeontest_swords:blade_bronze"},
-			{"default:mese_crystal",	"dungeontest_swords:blade_mese"},
-			{"default:diamond",	"dungeontest_swords:blade_diamond"},
+			{"default:wood",	"dungeon_swords:blade_wood"},
+			{"default:stone",	"dungeon_swords:blade_stone"},
+			{"default:steel_ingot",	"dungeon_swords:blade_steel"},
+			{"default:bronze_ingot",	"dungeon_swords:blade_bronze"},
+			{"default:mese_crystal",	"dungeon_swords:blade_mese"},
+			{"default:diamond",	"dungeon_swords:blade_diamond"},
 			}
 	for i in ipairs (blade_list) do
 		local mat = blade_list[i][1]
@@ -141,8 +141,8 @@ elseif fields["hbutton"]then
 
 
 	local handle_list = {
-			{"default:stick",	"dungeontest_swords:handle_wood"},
-			{"default:steel_ingot",	"dungeontest_swords:handle_steel"},
+			{"default:stick",	"dungeon_swords:handle_wood"},
+			{"default:steel_ingot",	"dungeon_swords:handle_steel"},
 			}
 	for i in ipairs (handle_list) do
 		local mat = handle_list[i][1]
@@ -184,8 +184,8 @@ elseif fields["sbutton"]then
 	for i=1,#maters do
 	local mater = maters[i]
 	
-		if   s1:get_name() == "dungeontest_swords:blade_"..mater and
-		     s2:get_name() == "dungeontest_swords:handle_wood" then
+		if   s1:get_name() == "dungeon_swords:blade_"..mater and
+		     s2:get_name() == "dungeon_swords:handle_wood" then
 				sword = "default:sword_"..mater
 				make_sword = true
 		end

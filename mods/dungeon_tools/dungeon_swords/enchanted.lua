@@ -38,10 +38,7 @@ for i in ipairs (swrds) do
 	local fles = swrds[i][6]
 	local img  = swrds[i][7]
 
-
-
---Enchanted Wood Handle Swords
-minetest.register_tool("dungeontest_swords:sword_enchanted_"..mat.."_"..col,{
+minetest.register_tool("dungeon_swords:sword_enchanted_"..mat.."_"..col,{
 	description = "Enchanted "..mdes.." Sword - "..cdes,
 	inventory_image = "dungeontest_sword_handle_"..mat.."_enchanted.png^dungeontest_sword_blade_"..col..".png",
 	wield_scale = {x=1.5,y=1.5,z=0.5},
@@ -52,6 +49,7 @@ minetest.register_tool("dungeontest_swords:sword_enchanted_"..mat.."_"..col,{
 			snappy={times={[1]=1.9, [2]=0.9, [3]=0.30}, uses=use, maxlevel=1},
 		},
 		damage_groups = fles,
-		}
+		},
+	groups = {not_in_creative_inventory = 1}
 })
 end

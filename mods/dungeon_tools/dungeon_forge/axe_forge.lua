@@ -8,7 +8,7 @@ local make_axe = false
 
 
 
-minetest.register_node("dungeontest_swords:axe_forge",{
+minetest.register_node("dungeon_forge:axe_forge",{
 	description = "Axe Forge",
 	tiles = {
 			{name="dungeon_forge_top.png", animation={type="vertical_frames",aspect_w=16, aspect_h=16, length=0.3}},
@@ -95,12 +95,12 @@ if fields["bbutton"]then
 
 
 	local blade_list = {
-			{"default:wood",			"dungeon_tools:axe_blade_wood"},
-			{"default:stone",			"dungeon_tools:axe_blade_stone"},
-			{"default:steel_ingot",		"dungeon_tools:axe_blade_steel"},
-			{"default:bronze_ingot",	"dungeon_tools:axe_blade_bronze"},
-			{"default:mese_crystal",	"dungeon_tools:axe_blade_mese"},
-			{"default:diamond",			"dungeon_tools:axe_blade_diamond"},
+			{"default:wood",			"dungeon_axes:axe_blade_wood"},
+			{"default:stone",			"dungeon_axes:axe_blade_stone"},
+			{"default:steel_ingot",		"dungeon_axes:axe_blade_steel"},
+			{"default:bronze_ingot",	"dungeon_axes:axe_blade_bronze"},
+			{"default:mese_crystal",	"dungeon_axes:axe_blade_mese"},
+			{"default:diamond",			"dungeon_axes:axe_blade_diamond"},
 			}
 	for i in ipairs (blade_list) do
 		local mat = blade_list[i][1]
@@ -142,7 +142,7 @@ elseif fields["hbutton"]then
 		if   h1:get_name() == "default:stick" and
 		     h2:get_name() == "default:stick" and
 		     h3:get_name() == "default:stick" then
-				handle = "dungeon_tools:axe_handle"
+				handle = "dungeon_axes:axe_handle"
 				make_handle = true
 		end
 		if make_handle == true then
@@ -174,8 +174,8 @@ elseif fields["abutton"]then
 	for i=1,#maters do
 	local mater = maters[i]
 	
-		if   s1:get_name() == "dungeon_tools:axe_blade_"..mater and
-		     s2:get_name() == "dungeon_tools:axe_handle" then
+		if   s1:get_name() == "dungeon_axes:axe_blade_"..mater and
+		     s2:get_name() == "dungeon_axes:axe_handle" then
 				axe = "default:axe_"..mater
 				make_axe = true
 		end

@@ -360,7 +360,7 @@ minetest.register_craft({
 		{"default:wood", "default:steel_ingot","default:wood"}
 	}
 })
-
+--[[
 minetest.register_tool("castle:battleaxe", {
 	description = "Battleaxe",
 	inventory_image = "castle_battleaxe.png",
@@ -382,7 +382,7 @@ minetest.register_craft({
                   {"", "default:stick",""}
 	}
 })
-
+--]]
 if minetest.get_modpath("moreblocks") then
 
 	stairsplus:register_all("castle", "dungeon_stone", "castle:dungeon_stone", {

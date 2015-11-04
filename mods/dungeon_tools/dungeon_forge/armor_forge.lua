@@ -10,7 +10,7 @@ local make_boots = false
 
 
 
-minetest.register_node("dungeontest_swords:armor_forge",{
+minetest.register_node("dungeon_forge:armor_forge",{
 	description = "Armor Forge",
 	tiles = {
 			{name="dungeon_forge_top.png", animation={type="vertical_frames",aspect_w=16, aspect_h=16, length=0.3}},

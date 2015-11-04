@@ -11,24 +11,15 @@ local des = items[i][1]
 local itm = items[i][2]
 local cra = items[i][3]
 
-minetest.register_craftitem("dungeontest_swords:"..itm,{
+minetest.register_craftitem("dungeon_swords:"..itm,{
 	description = des,
 	inventory_image = "dungeontest_sword_"..itm..".png",
+	groups = {not_in_creative_inventory = 1}
 	})
 
-minetest.register_craft({
-		--type = "shapeless",
-		output = "default:"..cra,
-		recipe = {
-			{"dungeontest_swords:handle_wood", "dungeontest_swords:"..itm},
-		},
-})
 end
-minetest.register_craftitem("dungeontest_swords:handle_wood",{
+minetest.register_craftitem("dungeon_swords:handle_wood",{
 	description = "Wood Sword Handle",
 	inventory_image = "dungeontest_sword_handle_wood.png",
-	})
-minetest.register_craftitem("dungeontest_swords:handle_steel",{
-	description = "Steel Sword Handle",
-	inventory_image = "dungeontest_sword_handle_steel.png",
+	groups = {not_in_creative_inventory = 1}
 	})
