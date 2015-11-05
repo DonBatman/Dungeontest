@@ -38,12 +38,12 @@ minetest.register_node("dungeon_forge:armor_forge",{
 	},
 
 after_place_node = function(pos, placer)
-	local meta = minetest.env:get_meta(pos);
+	local meta = minetest.get_meta(pos);
 			meta:set_string("infotext",  "Armor Forge");
 end,
 
 on_construct = function(pos)
-	local meta = minetest.env:get_meta(pos)
+	local meta = minetest.get_meta(pos)
 	meta:set_string("formspec", "size[12,10;]"..
 		"background[-0.25,-0.25;12.5,10.5;dungeon_forge_bg.png]"..
 		--Head
