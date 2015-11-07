@@ -44,7 +44,8 @@ end,
 on_construct = function(pos)
 	local meta = minetest.env:get_meta(pos)
 	meta:set_string("formspec", "size[10,8;]"..
-		"background[-1,-2;11,12;dungeon_enchantment_table_bg.png]"..
+		"background[-2,-2;13,12;dungeon_enchantment_table_bg.png]"..
+		"listcolors[#5e4300;#936800;#000000]"..
 		--top row
 		"label[1,0.5;Tool]"..
 		"label[3,0.5;Orbs]"..
@@ -148,6 +149,26 @@ then
 			{"dungeon_axes:axe_enchanted_bronze_blue",		"red",	"dungeon_axes:axe_enchanted_bronze_red"},
 			{"dungeon_axes:axe_enchanted_mese_blue",		"red",	"dungeon_axes:axe_enchanted_mese_red"},
 			{"dungeon_axes:axe_enchanted_diamond_blue",		"red",	"dungeon_axes:axe_enchanted_diamond_red"},
+			
+			{"3d_armor:helmet_diamond",			"orange",	"dungeon_armor:diamond_helmet_orange"},
+			{"3d_armor:chestplate_diamond",		"orange",	"dungeon_armor:diamond_chestplate_orange"},
+			{"3d_armor:leggings_diamond",		"orange",	"dungeon_armor:diamond_leggings_orange"},
+			{"3d_armor:boots_diamond",			"orange",	"dungeon_armor:diamond_boots_orange"},
+			
+			{"dungeon_armor:diamond_helmet_orange",		"green",	"dungeon_armor:diamond_helmet_green"},
+			{"dungeon_armor:diamond_chestplate_orange",	"green",	"dungeon_armor:diamond_chestplate_green"},
+			{"dungeon_armor:diamond_leggings_orange",	"green",	"dungeon_armor:diamond_leggings_green"},
+			{"dungeon_armor:diamond_boots_orange",		"green",	"dungeon_armor:diamond_boots_green"},
+			
+			{"dungeon_armor:diamond_helmet_green",		"blue",	"dungeon_armor:diamond_helmet_blue"},
+			{"dungeon_armor:diamond_chestplate_green",	"blue",	"dungeon_armor:diamond_chestplate_blue"},
+			{"dungeon_armor:diamond_leggings_green",	"blue",	"dungeon_armor:diamond_leggings_blue"},
+			{"dungeon_armor:diamond_boots_green",		"blue",	"dungeon_armor:diamond_boots_blue"},
+			
+			{"dungeon_armor:diamond_helmet_blue",		"red",	"dungeon_armor:diamond_helmet_red"},
+			{"dungeon_armor:diamond_chestplate_blue",	"red",	"dungeon_armor:diamond_chestplate_red"},
+			{"dungeon_armor:diamond_leggings_blue",		"red",	"dungeon_armor:diamond_leggings_red"},
+			{"dungeon_armor:diamond_boots_blue",		"red",	"dungeon_armor:diamond_boots_red"},
 			}
 	for i in ipairs (tool_list) do
 		local tin = tool_list[i][1]

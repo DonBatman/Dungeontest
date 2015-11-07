@@ -44,6 +44,7 @@ on_construct = function(pos)
 	local meta = minetest.get_meta(pos)
 	meta:set_string("formspec", "size[9,10;]"..
 		"background[-0.15,-0.25;9.40,10.75;dungeon_forge_bg.png]"..
+		"listcolors[#191515;#464545;#000000]"..
 		--Blade
 		"label[1,1.5;Blade]"..
 		"list[current_name;blade1;3,1.5;1,1;]"..

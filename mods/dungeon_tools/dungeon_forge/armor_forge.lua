@@ -44,92 +44,41 @@ end,
 
 on_construct = function(pos)
 	local meta = minetest.get_meta(pos)
-	meta:set_string("formspec", "size[12,10;]"..
-		"background[-0.25,-0.25;12.5,10.5;dungeon_forge_bg.png]"..
-		--Head
-		"list[current_name;head1;1,0;1,1;]"..
-		"list[current_name;head2;1,1;1,1;]"..
-		"list[current_name;head3;2,0;1,1;]"..
-		"list[current_name;head4;3,0;1,1;]"..
-		"list[current_name;head5;3,1;1,1;]"..
-		"button[4.5,0;2,1;head;Helmet]"..
-		"list[current_name;hout;5,1;1,1;]"..
-		--Chest
-		"list[current_name;chest1;1.5,2.5;1,1;]"..
-		"list[current_name;chest2;1.5,3.5;1,1;]"..
-		"list[current_name;chest3;1.5,4.5;1,1;]"..
-		"list[current_name;chest4;2.5,2.5;1,1;]"..
-		"list[current_name;chest5;2.5,3.5;1,1;]"..
-		"list[current_name;chest6;2.5,4.5;1,1;]"..
-		"button[4.5,2.5;2,1;chest;Chest Plate]"..
-		"list[current_name;cout;5,3.5;1,1;]"..
-		--Pants
-		"list[current_name;pants1;1,5.5;1,1;]"..
-		"list[current_name;pants2;1,6.5;1,1;]"..
-		"list[current_name;pants3;2,5.5;1,1;]"..
-		"list[current_name;pants4;3,5.5;1,1;]"..
-		"list[current_name;pants5;3,6.5;1,1;]"..
-		"button[4.5,5.5;2,1;pants;Leggings]"..
-		"list[current_name;pout;5,6.5;1,1;]"..
-		--Boots
-		"list[current_name;boots1;1.25,7.5;1,1;]"..
-		"list[current_name;boots2;1.25,8.5;1,1;]"..
-		"list[current_name;boots3;2.75,7.5;1,1;]"..
-		"list[current_name;boots4;2.75,8.5;1,1;]"..
-		"button[4.5,7.5;2,1;boots;Boots]"..
-		"list[current_name;bout;5,8.5;1,1;]"..
+	meta:set_string("formspec", "size[11,4;]"..
+		"background[-0.5,-0.5;12,5;dungeon_forge_bg.png]"..
+		"listcolors[#191515;#464545;#000000]"..
+		"label[0,0;Input]"..
+		"list[current_name;input;0,0.5;1,1;]"..
+		"image_button[1.5,0;1,1;3d_armor_inv_helmet_diamond.png;helmet;x5]"..
+		"image_button[1.5,1;1,1;3d_armor_inv_chestplate_diamond.png;chest;x6]"..
+		"image_button[1.5,2;1,1;3d_armor_inv_leggings_diamond.png;pants;x5]"..
+		"image_button[1.5,3;1,1;3d_armor_inv_boots_diamond.png;boots;x4]"..
 		--output
+		"label[0,2.5;Output]"..
+		"list[current_name;output;0,3;1,1;]"..
 		--Show Inventory
-		"list[current_player;main;7,1;4,8;]")
+		"list[current_player;main;3,0;8,4;]")
 	meta:set_string("infotext", "Armor Forge")
 	local inv = meta:get_inventory()
-	inv:set_size("head1", 1)
-	inv:set_size("head2", 1)
-	inv:set_size("head3", 1)
-	inv:set_size("head4", 1)
-	inv:set_size("head5", 1)
-	inv:set_size("chest1", 1)
-	inv:set_size("chest2", 1)
-	inv:set_size("chest3", 1)
-	inv:set_size("chest4", 1)
-	inv:set_size("chest5", 1)
-	inv:set_size("chest6", 1)
-	inv:set_size("pants1", 1)
-	inv:set_size("pants2", 1)
-	inv:set_size("pants3", 1)
-	inv:set_size("pants4", 1)
-	inv:set_size("pants5", 1)
-	inv:set_size("boots1", 1)
-	inv:set_size("boots2", 1)
-	inv:set_size("boots3", 1)
-	inv:set_size("boots4", 1)
-	inv:set_size("hout", 1)
-	inv:set_size("cout", 1)
-	inv:set_size("pout", 1)
-	inv:set_size("bout", 1)
+	inv:set_size("input", 1)
+	inv:set_size("output", 1)
 end,
 
 on_receive_fields = function(pos, formname, fields, sender)
 local meta = minetest.get_meta(pos)
 local inv = meta:get_inventory()
+local istack = inv:get_stack("input",1)
 
-if fields["head"]then
+if fields["helmet"]then
 		make_helmet = false
-
-		if inv:is_empty("head1") or
-		 inv:is_empty("head2") or
-		 inv:is_empty("head3") or
-		 inv:is_empty("head4") or
-		 inv:is_empty("head5") then
+		local siz = istack:get_count("input")
+		if siz <= 4  then
+			minetest.chat_send_player(sender:get_player_name(), "You need 5 items to make a Helmet!")
 			return
 		end
-
-	local h1 = inv:get_stack("head1", 1)
-	local h2 = inv:get_stack("head2", 1)
-	local h3 = inv:get_stack("head3", 1)
-	local h4 = inv:get_stack("head4", 1)
-	local h5 = inv:get_stack("head5", 1)
-
+		if inv:is_empty("output") == false then
+			return
+		end
 
 	local helmets = {
 			{"default:wood",			"3d_armor:helmet_wood"},
@@ -143,53 +92,28 @@ if fields["head"]then
 		local mat = helmets[i][1]
 		local arm = helmets[i][2]
 
-		if   h1:get_name() == mat and
-		     h2:get_name() == mat and
-		     h3:get_name() == mat and
-		     h4:get_name() == mat and
-		     h5:get_name() == mat then
+		if   istack:get_name() == mat then
 				helmet = arm
 				make_helmet = true
 		end
 	end
 		if make_helmet == true then
-			inv:add_item("hout",helmet)
+			inv:add_item("output",helmet)
 			
-			h1:take_item()
-			inv:set_stack("head1",1,h1)
-			
-			h2:take_item()
-			inv:set_stack("head2",1,h2)
-			
-			h3:take_item()
-			inv:set_stack("head3",1,h3)
-			
-			h4:take_item()
-			inv:set_stack("head4",1,h4)
-			
-			h5:take_item()
-			inv:set_stack("head5",1,h5)
+			istack:take_item(5)
+			inv:set_stack("input",1,istack)
 		end
 
 elseif fields["chest"]then
 		make_chest = false
-
-		if inv:is_empty("chest1") or
-		 inv:is_empty("chest2") or
-		 inv:is_empty("chest3") or
-		 inv:is_empty("chest4") or
-		 inv:is_empty("chest5") or
-		 inv:is_empty("chest6") then
+		local siz = istack:get_count("input")
+		if siz <= 5 then
+			minetest.chat_send_player(sender:get_player_name(), "You need 6 items to make a Chestplate!")
 			return
 		end
-
-	local h1 = inv:get_stack("chest1", 1)
-	local h2 = inv:get_stack("chest2", 1)
-	local h3 = inv:get_stack("chest3", 1)
-	local h4 = inv:get_stack("chest4", 1)
-	local h5 = inv:get_stack("chest5", 1)
-	local h6 = inv:get_stack("chest6", 1)
-
+		if inv:is_empty("output") == false then
+			return
+		end
 
 	local chests = {
 			{"default:wood",			"3d_armor:chestplate_wood"},
@@ -203,51 +127,29 @@ elseif fields["chest"]then
 		local mat = chests[i][1]
 		local arm = chests[i][2]
 
-		if   h1:get_name() == mat and
-		     h2:get_name() == mat and
-		     h3:get_name() == mat and
-		     h4:get_name() == mat and
-		     h5:get_name() == mat and
-		     h6:get_name() == mat then
+		if   istack:get_name() == mat then
 				chest = arm
 				make_chest = true
 		end
 	end
 		if make_chest == true then
-			inv:add_item("cout",chest)
+			inv:add_item("output",chest)
 			
-			h1:take_item()
-			inv:set_stack("chest1",1,h1)
-			
-			h2:take_item()
-			inv:set_stack("chest2",1,h2)
-			
-			h3:take_item()
-			inv:set_stack("chest3",1,h3)
-			
-			h4:take_item()
-			inv:set_stack("chest4",1,h4)
-			
-			h5:take_item()
-			inv:set_stack("chest5",1,h5)
+			istack:take_item(6)
+			inv:set_stack("input",1,istack)
 		end
+		
 elseif fields["pants"]then
 		make_pants = false
 
-		if inv:is_empty("pants1") or
-		 inv:is_empty("pants2") or
-		 inv:is_empty("pants3") or
-		 inv:is_empty("pants4") or
-		 inv:is_empty("pants5") then
+		local siz = istack:get_count("input")
+		if siz <= 4 then
+			minetest.chat_send_player(sender:get_player_name(), "You need 5 items to make Leggings!")
 			return
 		end
-
-	local h1 = inv:get_stack("pants1", 1)
-	local h2 = inv:get_stack("pants2", 1)
-	local h3 = inv:get_stack("pants3", 1)
-	local h4 = inv:get_stack("pants4", 1)
-	local h5 = inv:get_stack("pants5", 1)
-
+		if inv:is_empty("output") == false then
+			return
+		end
 
 	local pant = {
 			{"default:wood",			"3d_armor:leggings_wood"},
@@ -261,48 +163,28 @@ elseif fields["pants"]then
 		local mat = pant[i][1]
 		local arm = pant[i][2]
 
-		if   h1:get_name() == mat and
-		     h2:get_name() == mat and
-		     h3:get_name() == mat and
-		     h4:get_name() == mat and
-		     h5:get_name() == mat then
+		if   istack:get_name() == mat then
 				pants = arm
 				make_pants = true
 		end
 	end
 		if make_pants == true then
-			inv:add_item("pout",pants)
+			inv:add_item("output",pants)
 			
-			h1:take_item()
-			inv:set_stack("pants1",1,h1)
-			
-			h2:take_item()
-			inv:set_stack("pants2",1,h2)
-			
-			h3:take_item()
-			inv:set_stack("pants3",1,h3)
-			
-			h4:take_item()
-			inv:set_stack("pants4",1,h4)
-			
-			h5:take_item()
-			inv:set_stack("pants5",1,h5)
+			istack:take_item(5)
+			inv:set_stack("input",1,istack)
 		end
+		
 elseif fields["boots"]then
-		make_helmet = false
-
-		if inv:is_empty("boots1") or
-		 inv:is_empty("boots2") or
-		 inv:is_empty("boots3") or
-		 inv:is_empty("boots4") then
+		make_boots = false
+		local siz = istack:get_count("input")
+		if siz <= 3 then
+			minetest.chat_send_player(sender:get_player_name(), "You need 4 items to make Boots!")
 			return
 		end
-
-	local h1 = inv:get_stack("boots1", 1)
-	local h2 = inv:get_stack("boots2", 1)
-	local h3 = inv:get_stack("boots3", 1)
-	local h4 = inv:get_stack("boots4", 1)
-
+		if inv:is_empty("output") == false then
+			return
+		end
 
 	local boot = {
 			{"default:wood",			"3d_armor:boots_wood"},
@@ -316,28 +198,16 @@ elseif fields["boots"]then
 		local mat = boot[i][1]
 		local arm = boot[i][2]
 
-		if   h1:get_name() == mat and
-		     h2:get_name() == mat and
-		     h3:get_name() == mat and
-		     h4:get_name() == mat then
+		if   istack:get_name() == mat then
 				boots = arm
 				make_boots = true
 		end
 	end
 		if make_boots == true then
-			inv:add_item("bout",boots)
+			inv:add_item("output",boots)
 			
-			h1:take_item()
-			inv:set_stack("boots1",1,h1)
-			
-			h2:take_item()
-			inv:set_stack("boots2",1,h2)
-			
-			h3:take_item()
-			inv:set_stack("boots3",1,h3)
-			
-			h4:take_item()
-			inv:set_stack("boots4",1,h4)
+			istack:take_item(4)
+			inv:set_stack("input",1,istack)
 		end
 end
 end,

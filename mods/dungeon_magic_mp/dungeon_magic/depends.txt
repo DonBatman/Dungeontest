@@ -1,0 +1,3 @@
+scrolls
+mana
+3d_armor

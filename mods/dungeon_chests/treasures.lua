@@ -4,7 +4,7 @@
 treasurer.register_treasure("default:gold_ingot",0.01,7,{1,10},nil,"crafting_component")
 treasurer.register_treasure("default:bronze_ingot",0.02,5,{1,16},nil,"crafting_component")
 treasurer.register_treasure("default:copper_ingot",0.06,3,{1,17},nil,"crafting_component")
-treasurer.register_treasure("default:steel_ingot",0.09,4,{1,20},nil,"crafting_component")
+treasurer.register_treasure("default:iron_lump",0.09,4,{1,20},nil,"crafting_component")
 treasurer.register_treasure("default:stick",0.09,4,{1,20},nil,"crafting_component")
 
 
@@ -26,26 +26,12 @@ treasurer.register_treasure("default:sword_bronze",0.015,6,nil,nil,"melee_weapon
 treasurer.register_treasure("default:sword_mese",0.007,8,nil,nil,"melee_weapon")
 treasurer.register_treasure("default:sword_diamond",0.0035,9,nil,nil,"melee_weapon")
 
-treasurer.register_treasure("default:shovel_wood",0.02,4,nil,nil,"minetool")
-treasurer.register_treasure("default:shovel_stone",0.050,5,nil,nil,"minetool")
-treasurer.register_treasure("default:shovel_steel",0.07,6,nil,nil,"minetool")
-treasurer.register_treasure("default:shovel_bronze",0.006,7,nil,nil,"minetool")
-treasurer.register_treasure("default:shovel_mese",0.0012,8,nil,nil,"minetool")
-treasurer.register_treasure("default:shovel_diamond",0.0008,9,nil,nil,"minetool")
-
 treasurer.register_treasure("default:axe_wood",0.02,2,nil,nil,"minetool")
 treasurer.register_treasure("default:axe_stone",0.045,3,nil,nil,"minetool")
 treasurer.register_treasure("default:axe_steel",0.05,5,nil,nil,"minetool")
 treasurer.register_treasure("default:axe_bronze",0.005,6,nil,nil,"minetool")
 treasurer.register_treasure("default:axe_mese",0.0002,8,nil,nil,"minetool")
 treasurer.register_treasure("default:axe_diamond",0.000125,9,nil,nil,"minetool")
-
-treasurer.register_treasure("default:pick_wood",0.005,7,nil,nil,"minetool")
-treasurer.register_treasure("default:pick_stone",0.018,7.5,nil,nil,"minetool")
-treasurer.register_treasure("default:pick_steel",0.02,8,nil,nil,"minetool")
-treasurer.register_treasure("default:pick_bronze",0.004,8,nil,nil,"minetool")
-treasurer.register_treasure("default:pick_mese",0.008,9.5,nil,nil,"minetool")
-treasurer.register_treasure("default:pick_diamond",0.005,10,nil,nil,"minetool")
 
 treasurer.register_treasure("default:torch",0.2,2,{1,5},nil,"light")
 
@@ -58,15 +44,16 @@ treasurer.register_treasure("mobs:rat",1,0.6,{1,2},nil,"raw_food")
 treasurer.register_treasure("mobs:rat_cooked",0.1,1,{1,2},nil,"food")
 
 --Magic Orbs
-treasurer.register_treasure("dungeon_maic:orb_orange",0.2,1,{1,2},nil,"crafting_component")
-treasurer.register_treasure("dungeon_maic:orb_green",0.8,1,{1,2},nil,"crafting_component")
-treasurer.register_treasure("dungeon_maic:orb_blue",0.02,1,{1,2},nil,"crafting_component")
-treasurer.register_treasure("dungeon_maic:orb_red",0.08,1,{1,2},nil,"crafting_component")
-treasurer.register_treasure("dungeon_maic:crystal_orange",0.1,1,{1,2},nil,"crafting_component")
-treasurer.register_treasure("dungeon_maic:crystal_green",0.8,1,{1,2},nil,"crafting_component")
-treasurer.register_treasure("dungeon_maic:crystal_blue",0.02,1,{1,2},nil,"crafting_component")
-treasurer.register_treasure("dungeon_maic:crystal_red",0.08,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_magic:orb_orange",0.2,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_magic:orb_green",0.8,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_magic:orb_blue",0.02,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_magic:orb_red",0.08,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_magic:crystal_orange",0.1,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_magic:crystal_green",0.8,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_magic:crystal_blue",0.02,1,{1,2},nil,"crafting_component")
+treasurer.register_treasure("dungeon_magic:crystal_red",0.08,1,{1,2},nil,"crafting_component")
 
+treasurer.register_treasure("dungeon_magic:gold_coin",0.8,10,{1,10},nil,"crafting_component")
 
 if  minetest.get_modpath("throwing") then
     treasurer.register_treasure("throwing:spear_stone", 0.03, 5, nil, nil, {"melee_weapon", "ranged_weapon"})

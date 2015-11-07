@@ -20,7 +20,9 @@ minetest.register_node("dungeon_magic:block_"..col..tool,{
 	paramtype = "light",
 	drop = "",
 	groups = mag,
-
+	on_punch = function(pos, node, puncher, pointed_thing)
+		minetest.chat_send_player(puncher:get_player_name(), "You need an enchanted "..col.." "..tool.." to break this block")
+	end,
 })
 end
 
@@ -84,4 +86,32 @@ minetest.register_node("dungeon_magic:teleport_fake",{
 	light_source = 14,
 	groups = {creative_breakable=1},
 
+})
+minetest.register_node("dungeon_magic:hole1",{
+	description = "FakeTeleport Block",
+	tiles = {
+			"dungeon_hole_in_floor.png",
+			"dungeon_floor.png",
+			"dungeon_floor.png",
+			"dungeon_floor.png",
+			"dungeon_floor.png",
+			"dungeon_floor.png",
+			},
+	paramtype = "light",
+	drop = "",
+	groups = {creative_breakable=1},
+})
+minetest.register_node("dungeon_magic:hole2",{
+	description = "FakeTeleport Block",
+	tiles = {
+			"dungeon_hole_in_floor.png",
+			"dungeon_floor.png",
+			"dungeon_floor.png",
+			"dungeon_floor.png",
+			"dungeon_floor.png",
+			"dungeon_floor.png",
+			},
+	paramtype = "light",
+	drop = "",
+	groups = {creative_breakable=1},
 })

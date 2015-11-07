@@ -1,7 +1,4 @@
 
-
-
-
 scrolls.register_spell("scrolls:speed", {
 	description = "Speed",
 	scroll_image = "scroll_of_speed.png",
@@ -20,7 +17,6 @@ scrolls.register_spell("scrolls:speed", {
     		target:set_physics_override(1,nil,nil)
     	end
     },
-
 	treasure = {
 		rarity = 0.1,
 		preciousness = 5,
@@ -59,7 +55,6 @@ scrolls.register_spell("scrolls:levitation", {
             target:set_physics_override({ gravity = 1 })
         end
     },
-
 	treasure = {
 		rarity = 0.02,
 		preciousness = 7,
@@ -89,7 +84,6 @@ scrolls.register_spell("scrolls:poisoning", {
 			end
 		}}
     },
-
 	treasure = {
 		rarity = 0.2,
 		preciousness = 2,
@@ -118,7 +112,6 @@ scrolls.register_spell("scrolls:regeneration", {
 			end
 		}}
     },
-
 	treasure = {
 		rarity = 0.1,
 		preciousness = 4,
@@ -141,7 +134,6 @@ scrolls.register_spell("scrolls:breathing", {
 			end
 		}}
     },
-
 	treasure = {
 		rarity = 0.1,
 		preciousness = 4,
@@ -172,7 +164,6 @@ scrolls.register_spell("scrolls:confusion", {
 			end
 		}}
     },
-
 	treasure = {
 		rarity = 0.1,
 		preciousness = 2.5,
@@ -242,7 +233,6 @@ scrolls.register_spell("scrolls:immolation", {
 		end
 		return true
 	end,
-
 	treasure = {
 		rarity = 0.04,
 		preciousness = 8,
@@ -292,7 +282,6 @@ scrolls.register_spell("scrolls:irrigation", {
 			return false
 		end
 	end,
-
 	treasure = {
 		rarity = 0.07,
 		preciousness = 7,
@@ -377,7 +366,6 @@ scrolls.register_spell("scrolls:teleportation", {
 
 		return true
 	end,
-
 	treasure = {
 		rarity = 0.07,
 		preciousness = 6,
@@ -407,7 +395,6 @@ scrolls.register_spell("scrolls:invisibility", {
 			target:set_nametag_attributes(nametag)
         end,
     },
-
 	treasure = {
 		rarity = 0.02,
 		preciousness = 8,
@@ -456,7 +443,6 @@ scrolls.register_spell("scrolls:random", {
         end
         return random_spell.on_cast(caster, pointed_thing)
     end,
-
 	treasure = {
 		rarity = 0.2,
 		preciousness = 2,

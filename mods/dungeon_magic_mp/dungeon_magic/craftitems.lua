@@ -8,4 +8,5 @@ minetest.register_craftitem("dungeon_magic:blood_drop",{
 minetest.register_craftitem("dungeon_magic:gold_coin",{
 	inventory_image = "dungeon_gold_coin.png",
 	description = "Gold Coin",
+	stack_max = 10000,
 	})
