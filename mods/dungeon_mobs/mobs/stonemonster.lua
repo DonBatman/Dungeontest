@@ -31,6 +31,8 @@ mobs:register_mob("mobs:stone_monster", {
 		chance=5, min=1, max=2},
 		{name = "default:coal_lump",
 		chance=3, min=1, max=3},
+		{name = "dungeon_magic:blood_drop",
+		chance = 5, min = 1, max = 1},
 	},
 	water_damage = 0,
 	lava_damage = 1,

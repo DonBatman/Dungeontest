@@ -35,6 +35,8 @@ mobs:register_mob("mobs:mese_monster", {
 		chance = 9, min = 1, max = 3},
 		{name = "default:mese_crystal_fragment",
 		chance = 1, min = 1, max = 9},
+		{name = "dungeon_magic:blood_drop",
+		chance = 5, min = 1, max = 1},
 	},
 	water_damage = 0,
 	lava_damage = 0,

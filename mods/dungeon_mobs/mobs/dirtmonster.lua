@@ -27,6 +27,8 @@ mobs:register_mob("mobs:dirt_monster", {
 	drops = {
 		{name = "default:dirt",
 		chance = 1, min = 3, max = 5},
+		{name = "dungeon_magic:blood_drop",
+		chance = 5, min = 1, max = 1},
 	},
 	water_damage = 1,
 	lava_damage = 5,

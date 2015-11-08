@@ -196,7 +196,7 @@ minetest.register_abm({
 	interval = 0.5,
 	chance = 1,
 	action = function(pos, node, active_object_count, active_object_count_wider)
-		local objs = minetest.env:get_objects_inside_radius(pos, 1)
+		local objs = minetest.get_objects_inside_radius(pos, 1)
 		for k, player in pairs(objs) do
 			if player:get_player_name() then
 				if node.name == "dungeon_magic:hole1" then

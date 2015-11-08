@@ -185,8 +185,13 @@ then
 		end
 	end
 	
+	local tool_wear = tool:get_wear()
 		if enchant == true then
+			
 			inv:add_item("output",enchanted_tool)
+			local out = inv:get_stack("output", 1)
+			out:set_wear(tool_wear)
+			inv:set_stack("output",1,out)
 			
 			orba:take_item()
 			inv:set_stack("orb1",1,orba)

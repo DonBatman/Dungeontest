@@ -20,7 +20,10 @@ mobs:register_mob("mobs:bunny", {
 	run_velocity = 2,
 	jump = true,
 	drops = {
-		{name = "dungeon_magic:orb_orange",chance = 20, min = 1, max = 2},
+		{name = "dungeon_magic:orb_orange",
+		chance = 20, min = 1, max = 2},
+		{name = "dungeon_magic:blood_drop",
+		chance = 5, min = 1, max = 1},
 	},
 	water_damage = 1,
 	lava_damage = 4,

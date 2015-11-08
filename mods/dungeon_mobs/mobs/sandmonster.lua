@@ -27,6 +27,8 @@ mobs:register_mob("mobs:sand_monster", {
 	drops = {
 		{name = "default:desert_sand",
 		chance = 1, min = 3, max = 5},
+		{name = "dungeon_magic:blood_drop",
+		chance = 5, min = 1, max = 1},
 	},
 	water_damage = 3,
 	lava_damage = 4,

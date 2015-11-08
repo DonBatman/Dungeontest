@@ -38,6 +38,8 @@ mobs:register_mob("mobs:dungeon_master", {
 		chance = 2, min = 1, max = 2},
 		{name = "default:diamond_block",
 		chance = 30, min = 1, max = 1},
+		{name = "dungeon_magic:blood_drop",
+		chance = 5, min = 1, max = 3},
 	},
 	water_damage = 1,
 	lava_damage = 1,

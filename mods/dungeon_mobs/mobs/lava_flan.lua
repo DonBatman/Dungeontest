@@ -29,6 +29,8 @@ mobs:register_mob("mobs:lava_flan", {
 	drops = {
 		{name = "mobs:lava_orb",
 		chance = 15, min = 1, max = 1},
+		{name = "dungeon_magic:blood_drop",
+		chance = 5, min = 1, max = 1},
 	},
 	water_damage = 5,
 	lava_damage = 0,
