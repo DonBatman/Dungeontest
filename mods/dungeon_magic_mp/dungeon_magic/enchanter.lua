@@ -45,7 +45,7 @@ on_construct = function(pos)
 	local meta = minetest.env:get_meta(pos)
 	meta:set_string("formspec", "size[10,8;]"..
 		"background[-2,-2;13,12;dungeon_enchantment_table_bg.png]"..
-		"listcolors[#5e4300;#936800;#000000]"..
+		"listcolors[#00000000;#00000000;#000000]"..
 		--top row
 		"label[1,0.5;Tool]"..
 		"label[3,0.5;Orbs]"..

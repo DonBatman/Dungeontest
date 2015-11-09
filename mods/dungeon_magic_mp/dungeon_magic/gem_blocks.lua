@@ -202,7 +202,7 @@ minetest.register_abm({
 				if node.name == "dungeon_magic:hole1" then
 					player:setpos({x=pos.x,y=pos.y+7,z=pos.z})
 				elseif node.name == "dungeon_magic:hole2" then
-					player:setpos({x=pos.x,y=pos.y-4,z=pos.z})
+					player:setpos({x=pos.x,y=pos.y-3,z=pos.z})
 				end
 			end
 		end

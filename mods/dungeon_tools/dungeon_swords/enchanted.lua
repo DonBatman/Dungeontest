@@ -51,5 +51,8 @@ minetest.register_tool("dungeon_swords:sword_enchanted_"..mat.."_"..col,{
 		damage_groups = fles,
 		},
 	groups = {not_in_creative_inventory = 1},
+	on_place = function(itemstack, placer, pointed_thing)
+	minetest.set_node(pointed_thing.above,{name = "default:dirt"})
+	end
 })
 end
